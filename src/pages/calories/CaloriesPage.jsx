@@ -3,6 +3,11 @@ import CalorieBar from './CalorieBar'
 import { ACTIVITY_LEVELS, LOSS_RATES, computeDay, fmt } from './calc'
 import './calories.css'
 
+const BMR_PRESETS = [
+  { name: 'Kevin', bmr: 1600 },
+  { name: 'Heda', bmr: 1300 },
+]
+
 export default function CaloriesPage() {
   const [bmr, setBmr] = useState('1800')
   const [activityId, setActivityId] = useState('sedentary')
@@ -39,6 +44,18 @@ export default function CaloriesPage() {
                 onChange={(e) => setBmr(e.target.value)}
               />
             </label>
+            <div className="presets">
+              {BMR_PRESETS.map((p) => (
+                <button
+                  key={p.name}
+                  type="button"
+                  className={`preset ${bmr === String(p.bmr) ? 'on' : ''}`}
+                  onClick={() => setBmr(String(p.bmr))}
+                >
+                  {p.name}: {p.bmr}
+                </button>
+              ))}
+            </div>
           </fieldset>
 
           <fieldset>

@@ -59,7 +59,7 @@ export default function CalorieBar({ data }) {
                   onMouseEnter={() => setHover(s.key)}
                   onMouseLeave={() => setHover(null)}
                 >
-                  {px(s.value) >= 22 && <span className="seg-label">{fmt(s.value)}</span>}
+                  {px(s.value) >= 22 && <span className="seg-label">{fmt(s.value)} - {s.label}</span>}
                   {hover === s.key && (
                     <div className="tooltip">
                       <strong>{s.label}</strong>
