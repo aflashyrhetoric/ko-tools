@@ -1,0 +1,56 @@
+/* Projection page */
+.pj-money-input { position: relative; }
+.pj-money-input > span {
+  position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
+  color: var(--ink-3); font-size: 16px; pointer-events: none;
+}
+.field .pj-money-input input { padding-left: 24px; }
+
+.pj-range-value { color: var(--ink); font-weight: 600; }
+.pj-slider { width: 100%; accent-color: var(--accent); margin: 4px 0 0; }
+.pj-range-ends { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-3); }
+
+.pj-chart { position: relative; width: 100%; margin: 8px 0 0; }
+.pj-chart svg { display: block; overflow: visible; cursor: crosshair; }
+.pj-chart svg:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+
+.pj-grid { stroke: var(--line); stroke-width: 1; }
+.pj-zero { stroke: var(--ink-3); stroke-width: 1; }
+.pj-tick { font-size: 11px; fill: var(--ink-3); font-variant-numeric: tabular-nums; }
+.pj-axis-title { font-size: 12px; fill: var(--ink-2); }
+
+.pj-area { fill: color-mix(in srgb, var(--accent) 22%, transparent); }
+.pj-area.neg { fill: color-mix(in srgb, var(--c-deficit) 22%, transparent); }
+.pj-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; }
+.pj-line.neg { stroke: var(--c-deficit); }
+.pj-area, .pj-line { transition: d 0.25s ease; }
+
+.pj-cross { stroke: var(--ink-3); stroke-width: 1; stroke-dasharray: 3 3; }
+.pj-dot { fill: var(--accent); stroke: var(--surface); stroke-width: 2; }
+.pj-dot.neg { fill: var(--c-deficit); }
+
+.pj-tooltip {
+  position: absolute; pointer-events: none; white-space: nowrap; z-index: 5;
+  background: var(--ink); color: var(--surface); border-radius: 8px; padding: 6px 10px;
+  font-size: 13px; display: flex; flex-direction: column; gap: 2px;
+}
+.pj-tooltip-sub { font-size: 11px; opacity: 0.7; }
+
+/* Kevin's income (series 2) */
+.pj-slider.income { accent-color: var(--c-income); }
+.pj-takehome { margin: -2px 0 0; font-size: 13px; color: var(--ink-2); }
+.pj-takehome b { color: var(--ink); font-weight: 600; }
+.pj-takehome small { display: block; margin-top: 2px; font-size: 11px; color: var(--ink-3); }
+
+.pj-area.income { fill: color-mix(in srgb, var(--c-income) 20%, transparent); }
+.pj-line.income { stroke: var(--c-income); }
+.pj-dot.income { fill: var(--c-income); }
+
+.pj-legend {
+  list-style: none; padding: 0; margin: 0 0 4px; display: flex; flex-wrap: wrap;
+  gap: 4px 16px; font-size: 12px; color: var(--ink-2);
+}
+.pj-legend li { display: flex; align-items: center; gap: 6px; }
+.pj-swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; }
+.pj-swatch.balance { background: var(--accent); }
+.pj-swatch.income { background: var(--c-income); }
