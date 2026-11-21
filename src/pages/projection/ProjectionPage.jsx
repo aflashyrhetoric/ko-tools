@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import BackLink from '../../BackLink'
 import ProjectionChart from './ProjectionChart'
 import { MAX_DELAY, MAX_MONTHS, MIN_MONTHS, addMonths, money, monthYear, project } from './projection'
 import './projection.css'
@@ -36,6 +37,7 @@ export default function ProjectionPage() {
   return (
     <main className="app">
       <header>
+        <BackLink />
         <h1>Money projection</h1>
         <p className="sub">How long your money lasts at a steady monthly burn rate.</p>
       </header>

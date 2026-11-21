@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import BackLink from '../../BackLink'
 import CalorieBar from './CalorieBar'
 import { ACTIVITY_LEVELS, LOSS_RATES, computeDay, fmt } from './calc'
 import './calories.css'
@@ -26,6 +27,7 @@ export default function CaloriesPage() {
   return (
     <main className="app">
       <header>
+        <BackLink />
         <h1>Daily calorie visualizer</h1>
         <p className="sub">What you burn in a day, and what to eat to hit your weekly loss target.</p>
       </header>

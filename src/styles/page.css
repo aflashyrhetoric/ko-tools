@@ -59,3 +59,10 @@ legend { font-weight: 600; font-size: 14px; padding: 0 4px; }
 .tool-desc { font-size: 14px; color: var(--ink-2); line-height: 1.45; flex: 1; }
 .tool-path { font-size: 13px; color: var(--accent); }
 main a { color: var(--accent); }
+
+/* Back-to-home link at the top of tool pages */
+main a.back-link {
+  display: inline-block; margin-bottom: 12px; font-size: 13px;
+  color: var(--ink-2); text-decoration: none;
+}
+main a.back-link:hover { color: var(--accent); }
